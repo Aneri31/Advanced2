@@ -32,6 +32,9 @@ test.describe('Amazon Product Tests', () => {
         await amazonTests.searchProduct('iPhone 14'); // Correct method name to lowercase
     });
 
+    test('Demo', async () => {
+        await console.log("this is demo")
+    });
 });
 
 class AmazonTests extends CommonUtils {
