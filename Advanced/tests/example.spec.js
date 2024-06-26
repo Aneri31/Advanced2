@@ -1,8 +1,20 @@
-// example.spec.js
-
 const { test, chromium } = require('@playwright/test');
 const { baseURL } = require('../Configuration/config');
 const CommonUtils = require('./commonutils');
+
+class AmazonTests extends CommonUtils {
+    constructor(page) {
+        super(page);
+    }
+
+    async searchProduct(productName) {
+        // Implementation for searching the product
+        await this.page.goto(baseURL);
+        await this.page.fill('input[name="field-keywords"]', productName);
+        await this.page.click('input[type="submit"]');
+        // Add any other necessary steps for searching the product
+    }
+}
 
 test.describe('Amazon Product Tests', () => {
     let browser;
@@ -29,16 +41,10 @@ test.describe('Amazon Product Tests', () => {
     });
 
     test('Login and Search Product', async () => {
-        await amazonTests.searchProduct('iPhone 14'); // Correct method name to lowercase
+        await amazonTests.searchProduct('iPhone 14'); // Ensure method is correctly called
     });
-
-    test('Demo', async () => {
+    
+    test('Product', async () => {
         await console.log("this is demo")
-    });
 });
 
-class AmazonTests extends CommonUtils {
-    constructor(page) {
-        super(page);
-    }
-}
