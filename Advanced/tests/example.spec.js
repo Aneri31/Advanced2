@@ -47,4 +47,17 @@ test.describe('Amazon Product Tests', () => {
     test('Product', async () => {
         await console.log("this is demo")
 });
+    test('Product1', async () => {
+    await console.log("this is demo1")
+});
+     test('Product2', async () => {
+    await console.log("this is demo2")
+});
+     test('Product23', async () => {
+    await console.log("this is demo4")
+});
+     test('Product293', async () => {
+    await console.log("this is demo6")
+});
+});
 
